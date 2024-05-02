@@ -1,0 +1,109 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.8.19
+    cli_version: 0.16.6
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1714630217.0
+    t:
+      1:
+      - 1
+      - 5
+      - 41
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 41
+      - 53
+      - 55
+      3:
+      - 7
+      - 13
+      - 23
+      4: 3.8.19
+      5: 0.16.6
+      8:
+      - 5
+      13: linux-x86_64
+    m:
+    - 1: trainer/global_step
+      6:
+      - 3
+    - 1: pred/val/batch    0_sample_0._type
+      5: 1
+      6:
+      - 1
+    - 1: pred/val/batch    0_sample_0.width
+      5: 1
+      6:
+      - 1
+    - 1: pred/val/batch    0_sample_0.height
+      5: 1
+      6:
+      - 1
+    - 1: pred/val/batch    0_sample_0.format
+      5: 1
+      6:
+      - 1
+    - 1: pred/val/batch    0_sample_0.count
+      5: 1
+      6:
+      - 1
+    - 1: pred/val/batch    0_sample_0.filenames
+      5: 1
+      6:
+      - 1
+    - 1: pred/val/batch    0_sample_0.captions
+      5: 1
+      6:
+      - 1
+    - 1: lr-SGD
+      5: 1
+      6:
+      - 1
+    - 1: loss/val
+      5: 1
+      6:
+      - 1
+    - 1: accuracy/val
+      5: 1
+      6:
+      - 1
+    - 1: epoch
+      5: 1
+      6:
+      - 1
+    - 1: loss/train
+      5: 1
+      6:
+      - 1
+    - 1: accuracy/train
+      5: 1
+      6:
+      - 1
+model_name:
+  desc: null
+  value: resnet18
+num_classes:
+  desc: null
+  value: 200
+optimizer_params:
+  desc: null
+  value:
+    type: SGD
+    lr: 0.005
+    momentum: 0.9
+scheduler_params:
+  desc: null
+  value:
+    type: MultiStepLR
+    milestones:
+    - 30
+    - 35
+    gamma: 0.2

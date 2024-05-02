@@ -1,0 +1,53 @@
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0,1,2,3]
+  | Name     | Type             | Params
+----------------------------------------------
+0 | model    | ResNet           | 11.3 M
+1 | loss_fn  | CrossEntropyLoss | 0
+2 | accuracy | MyF1Score        | 0
+----------------------------------------------
+11.3 M    Trainable params
+0         Non-trainable params
+11.3 M    Total params
+45.116    Total estimated model params size (MB)
+Traceback (most recent call last):
+  File "train.py", line 53, in <module>
+    trainer.fit(model, datamodule=datamodule)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/trainer/trainer.py", line 987, in _run
+    results = self._run_stage()
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/trainer/trainer.py", line 1031, in _run_stage
+    self._run_sanity_check()
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/trainer/trainer.py", line 1060, in _run_sanity_check
+    val_loop.run()
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 135, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/loops/evaluation_loop.py", line 396, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_args)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/trainer/call.py", line 309, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/lightning/pytorch/strategies/strategy.py", line 412, in validation_step
+    return self.lightning_module.validation_step(*args, **kwargs)
+  File "/home/mmc-server4/Server/Users/hayeon/AUE8088/PA1/src/network.py", line 95, in validation_step
+    f1score = self.accuracy(scores, y)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/torchmetrics/metric.py", line 302, in forward
+    self._forward_cache = self._forward_full_state_update(*args, **kwargs)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/torchmetrics/metric.py", line 317, in _forward_full_state_update
+    self.update(*args, **kwargs)
+  File "/home/mmc-server4/miniconda3/envs/aue8088/lib/python3.8/site-packages/torchmetrics/metric.py", line 466, in wrapped_func
+    update(*args, **kwargs)
+  File "/home/mmc-server4/Server/Users/hayeon/AUE8088/PA1/src/metric.py", line 24, in update
+    self.f1_score = f1_score(target,preds,average=macro)
+NameError: name 'macro' is not defined
+Sanity Checking: |                                                                                                                               | 0/? [00:00<?, ?it/s][34m[1m[Val]	 root dir: /home/mmc-server4/Server/Datasets_hdd/tiny-imagenet-200/tiny-imagenet-200/val	 | # of samples: 10,000
+Sanity Checking DataLoader 0:   0%|                                                                                                              | 0/2 [00:00<?, ?it/s]torch.Size([512, 200])
