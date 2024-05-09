@@ -1,23 +1,31 @@
 # PA1 : Image Classification
 
-- [TODO]()
-- [Model Zoo]()
-- [Run]()
-- [Acknowledgement]()
+- [TODO](#❗TODO )
+- [Model Zoo](#Model-Zoo)
+- [Run](#Run)
+- [Acknowledgement](#Acknowledgement)
 
 
 # ❗TODO 
 - [x] Accuracy at [`metric.py`](https://github.com/MsDobby/AUE8088-PA1/blob/master/PA1/src/metric.py#L53)
 - [x] F1Score at [`metric.py`](https://github.com/MsDobby/AUE8088-PA1/blob/master/PA1/src/metric.py#L8)
-- [ ] Toward SOTA
-- [ ] Additional Technique
+- [x] Design my own network at [`network.py`]()
+- [x] Toward SOTA at [`network.py`]() 
 
 # Model Zoo
-|TBA|TBA|TBA|
+
+### Ablation Study 1 : Network Architecture
+||F1 Score| val / loss|
 |------|---|---|
-|TBA|||
-|TBA|||
-|TBA|||
+|base|||
+|global average pooling (GAP)|||
+|my feature extractor|||
+|GAP + my feature extractor|||
+
+### Ablation Study 2 : Learning Algorithms
+
+- Loss function
+- Optimizer 
 
 # Run
 ```bash
@@ -30,4 +38,4 @@ python train.py
 
 
 # Acknowledgement
-my work can be visible at this [link](https://wandb.ai/ophd/aue8088-pa1).
+You can see my work at this [link](https://wandb.ai/ophd/aue8088-pa1).
