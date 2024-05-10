@@ -1,0 +1,38 @@
+method: bayes
+metric:
+  goal: minimize
+  name: loss/val
+parameters:
+  optimizer_params:
+    parameters:
+      lr:
+        distribution: uniform
+        max: 0.02
+        min: 0.0025
+      momentum:
+        distribution: uniform
+        max: 1.8
+        min: 0.45
+      type:
+        distribution: categorical
+        values:
+          - SGD
+      weight_decay:
+        distribution: uniform
+        max: 0.001
+        min: 0.00025
+  scheduler_params:
+    parameters:
+      gamma:
+        distribution: uniform
+        max: 0.4
+        min: 0.1
+      milestones:
+        distribution: categorical
+        values:
+          - [10,40]
+      type:
+        distribution: categorical
+        values:
+          - MultiStepLR
+program: train.py
