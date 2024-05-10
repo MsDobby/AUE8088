@@ -1,1 +1,0 @@
-{"_timestamp": 1714559452.231291, "_runtime": 563.5905930995941, "_step": 162, "lr-SGD": 0.0002, "trainer/global_step": 7840, "loss/val": 2.747723340988159, "accuracy/val": 0.04235619306564331, "epoch": 40, "loss/train": 1.8304322957992554, "accuracy/train": 0.4830291271209717, "_wandb": {"runtime": 562}}
