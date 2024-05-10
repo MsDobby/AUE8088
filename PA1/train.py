@@ -23,13 +23,19 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='setup')
     parser.add_argument('--wandb',action='store_true')
+    parser.add_argument('--optimizer_params', type=str, default=None, help='Optimizer parameters as a dictionary string')
+    parser.add_argument('--scheduler_params', type=str, default=None, help='Scheduler parameters as a dictionary string')
     args = parser.parse_args()
+
+    optimizer_params = eval(args.optimizer_params) if args.optimizer_params else cfg.OPTIMIZER_PARAMS
+    scheduler_params = eval(args.scheduler_params) if args.scheduler_params else cfg.SCHEDULER_PARAMS
+
     
     model = SimpleClassifier(
         model_name = cfg.MODEL_NAME,
         num_classes = cfg.NUM_CLASSES,
-        optimizer_params = cfg.OPTIMIZER_PARAMS,
-        scheduler_params = cfg.SCHEDULER_PARAMS,
+        optimizer_params = optimizer_params,
+        scheduler_params = scheduler_params,
     )
 
     datamodule = TinyImageNetDatasetModule(
@@ -41,11 +47,13 @@ if __name__ == "__main__":
         save_dir = cfg.WANDB_SAVE_DIR,
         entity = cfg.WANDB_ENTITY,
         name = cfg.WANDB_NAME,
+        log_model = False
     )
 
     logger = wandb_logger if args.wandb else None
     
     trainer = Trainer(
+        # num_sanity_val_steps=0,
         accelerator = cfg.ACCELERATOR,
         devices = cfg.DEVICES,
         precision = cfg.PRECISION_STR,
