@@ -6,8 +6,10 @@ BATCH_SIZE          = 512
 VAL_EVERY_N_EPOCH   = 1
 
 NUM_EPOCHS          = 40
-OPTIMIZER_PARAMS    = {'type': 'SGD', 'lr': 0.005, 'momentum': 0.9}
+OPTIMIZER_PARAMS    = {'type': 'SGD', 'lr': 0.005, 'momentum': 0.9, 'weight decay':0.0005}
 SCHEDULER_PARAMS    = {'type': 'MultiStepLR', 'milestones': [30, 35], 'gamma': 0.2}
+DROPOUT_RATE        = 0.5
+CARDINALITY         = 32
 
 # Dataaset
 DATASET_ROOT_PATH   = '/home/mmc-server4/Server/Datasets_hdd/tiny-imagenet-200/'
@@ -21,7 +23,7 @@ IMAGE_PAD_CROPS     = 4
 IMAGE_MEAN          = [0.4802, 0.4481, 0.3975]
 IMAGE_STD           = [0.2302, 0.2265, 0.2262]
 
-# Network
+# Network : resnet18, alexnet, MyNetwork, SOTA
 MODEL_NAME          = 'resnet18'
 
 # Compute related
