@@ -14,15 +14,16 @@
 - [x] F1Score at [`metric.py / MyF1Score`](https://github.com/MsDobby/AUE8088-PA1/blob/master/PA1/src/metric.py#L8)
 - [x] Try different settings at [`config.py`](https://github.com/MsDobby/AUE8088-PA1/blob/master/PA1/src/config.py)
 - [x] Design my own network at [`network.py / MyNetwork`]()
-- [x] Toward SOTA at [`network.py / resnext18`]() 
+- [x] Toward SOTA at [`network.py / resnext18`]()
+
 
 # Performance Comparison
-||F1 Score| train / loss | val / loss|pretrained weights|
-|------|---|---|---|---|
-|AlexNet (base)|0.020125430077314377|3.0154902935028076|3.198350429534912|[tba.ckpt]()|
-|AlexNet + global average pooling|0.023817744106054306|2.1718180179595947|3.062333583831787|[tba.ckpt]()|
-|my feature extractor |0.03895244374871254|0.6486892700195312|1.684914231300354|[tba.ckpt]()|
-|ResNext-50 (SOTA)||||[tba.ckpt]()|
+||acc / val | acc / train | train / loss | val / loss|pretrained weights|
+|------|---|---|---|---|---|
+|AlexNet (base)|0.0201|0.2288|3.0155|3.1984|[tba.ckpt]()|
+|AlexNet + global average pooling|0.0238|0.3911|2.1718|3.0623|[tba.ckpt]()|
+|my feature extractor |**0.0390**|0.7652|**0.6487**|**1.6849**|[tba.ckpt]()|
+|ResNext-50 (SOTA)|0.0268|**0.8291**|0.6594|3.1556|[tba.ckpt]()|
 
 # Run
 ### train
